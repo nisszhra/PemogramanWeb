@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+<<<<<<< HEAD
 use Livewire\Volt\Volt;
 
 Route::get('/', function(){
@@ -58,3 +59,31 @@ Route::middleware(['auth'])->group(function () {
 });
 
 require __DIR__.'/auth.php';
+=======
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/home', function(){
+    return "Ini adalah halaman home";
+});
+Route::get('/mall', function(){
+    return "Ini adalah halaman Shopee Mall";
+});
+Route::get('/category', function(){
+    return 'Ini adalah halaman Kategori Produk';
+});
+Route::get('/cart', function(){
+    return 'Ini adalah halaman Keranjang';
+});
+Route::get('/checkout', function(){
+    return 'Ini adalah halaman Transaksi';
+});
+Route::get('/payment', function(){
+    return 'Ini adalah halaman Pembayaran';
+});
+Route::get('/buyer', function(){
+    return 'ini adalah halaman Pengaturan Akun';
+});
+>>>>>>> 597be176238dea7f4de9e346c8adfbc27292a263
