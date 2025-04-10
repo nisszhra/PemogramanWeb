@@ -1,50 +1,59 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-<<<<<<< HEAD
 use Livewire\Volt\Volt;
 
-Route::get('/', function(){
-    $title = "Homepage";
+use App\Http\Controllers\HomepageController;
 
-    return view('web.homepage',['title'=>$title]);
-});
+Route::get('/',[HomepageController::class,'index']);
+Route::get('products', [HomepageController::class, 'products']);
+Route::get('product/{slug}', [HomepageController::class, 'product']);
+Route::get('categories',[HomepageController::class, 'categories']);
+Route::get('category/{slug}', [HomepageController::class, 'category']);
+Route::get('cart', [HomepageController::class, 'cart']);
+Route::get('checkout', [HomepageController::class, 'checkout']);
 
-Route::get('products', function(){
-    $title = "Products";
+// Route::get('/', function(){
+//     $title = "Homepage";
 
-    return view('web.products',['title'=>$title]);
-});
+//     return view('web.homepage',['title'=>$title]);
+// });
 
-Route::get('product/{slug}', function($slug){
-    $title = "Single Product";
+// Route::get('products', function(){
+//     $title = "Products";
 
-    return view('web.single_product',['title'=>$title,'slug'=>$slug]);
-});
+//     return view('web.products',['title'=>$title]);
+// });
 
-Route::get('categories', function(){
-    $title = "Categories";
+// Route::get('product/{slug}', function($slug){
+//     $title = "Single Product";
 
-    return view('web.categories',['title'=>$title]);
-});
+//     return view('web.single_product',['title'=>$title,'slug'=>$slug]);
+// });
 
-Route::get('category/{slug}', function($slug){
-    $title = "Categories";
+// Route::get('categories', function(){
+//     $title = "Categories";
 
-    return view('web.single_category',['title'=>$title]);
-});
+//     return view('web.categories',['title'=>$title]);
+// });
 
-Route::get('cart', function(){
-    $title = "Cart";
+// Route::get('category/{slug}', function($slug){
+//     $title = "Categories";
 
-    return view('web.cart',['title'=>$title]);
-});
+//     return view('web.single_category',['title'=>$title]);
+// });
 
-Route::get('checkout', function(){
-    $title = "Checkout";
+// Route::get('cart', function(){
+//     $title = "Cart";
 
-    return view('web.checkout',['title'=>$title]);
-});
+//     return view('web.cart',['title'=>$title]);
+// });
+
+// Route::get('checkout', function(){
+//     $title = "Checkout";
+
+//     return view('web.checkout',['title'=>$title]);
+// });
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
@@ -59,31 +68,3 @@ Route::middleware(['auth'])->group(function () {
 });
 
 require __DIR__.'/auth.php';
-=======
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/home', function(){
-    return "Ini adalah halaman home";
-});
-Route::get('/mall', function(){
-    return "Ini adalah halaman Shopee Mall";
-});
-Route::get('/category', function(){
-    return 'Ini adalah halaman Kategori Produk';
-});
-Route::get('/cart', function(){
-    return 'Ini adalah halaman Keranjang';
-});
-Route::get('/checkout', function(){
-    return 'Ini adalah halaman Transaksi';
-});
-Route::get('/payment', function(){
-    return 'Ini adalah halaman Pembayaran';
-});
-Route::get('/buyer', function(){
-    return 'ini adalah halaman Pengaturan Akun';
-});
->>>>>>> 597be176238dea7f4de9e346c8adfbc27292a263
